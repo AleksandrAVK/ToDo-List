@@ -22,7 +22,7 @@
     display: flex;
     justify-content: flex-end;
     width: 59%;
-    margin-bottom: 11px;
+
     
 }
 
@@ -64,15 +64,24 @@
     border-radius: 12px;
     margin-bottom: 18px;
     height: 100%;
+    border: none;
 }
 
 .clearButton {
     display: flex;
     padding: 5px;
     padding-right: 15px;
-
-    margin: 0px;
+    background: url(./image/clearButton.svg) no-repeat;
+    margin: 7px;
+    height: 21px;
+    width: 19px;
+    border: none;
 }
+
+.clearButton:hover, .clearButton:focus{
+background: url(./image/clearButtonPurpur.svg) no-repeat;
+}
+
 
 .square__button-block {
     display: flex;
@@ -111,5 +120,26 @@
     height: 100%;
 }
 .sortingIcon {
-    display: flex;
+    justify-content: flex-end;
+    width: 29px;
+    height: 19px;
+    margin-bottom: 11px;
+    border:none;
+}
+
+.sortDownIcon {
+    background: url(./image/sortDownIconGray.svg)no-repeat;
+    border:none;
+}
+.sortDownIcon:hover {
+    background: url(./image/sortDownIconBlack.svg)no-repeat;
+    border:none;
+}
+.sortUpIcon {
+    background: url(./image/sortUpIconGray.svg)no-repeat;
+    border:none;
+}
+.sortUpIcon:hover {
+    background: url(./image/sortUpIconBlack.svg)no-repeat;
+    border:none;
 }
