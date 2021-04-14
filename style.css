@@ -61,7 +61,7 @@
 
 .square__All-inputes-block {
     border-radius: 12px;
-    border: 1px solid black;
+    border: 1px solid #C4C4C4;
     margin-bottom: 18px;
     width: 299px;
     
@@ -84,10 +84,12 @@
     height: 21px;
     width: 19px;
     border: none;
+    outline: none;
 }
 
 .clearButton:hover, .clearButton:focus{
 background: url(./image/clearButtonPurpur.svg) no-repeat;
+outline: none;
 }
 
 
