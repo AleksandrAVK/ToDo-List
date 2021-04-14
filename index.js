@@ -4,6 +4,7 @@ let allInputsBlock = document.querySelector('.square__All-inputes-block');
 let input = document.querySelector('.square__input');
 let clearButton = document.querySelector('.clearButton');
 let sortingIcon = document.querySelector('.sortingIcon');
+let dragAndDropItem = document.querySelector('.selected');
 let order = 'up';
 let sortOrder = 1;
 
@@ -12,16 +13,14 @@ let sortOrder = 1;
 
 
 
-function addInput() {
-
-                                                                                                                                 // беру значение текста из инпута и добвляю в массив
+function addInput() {                                                                                                                     // беру значение текста из инпута и добвляю в массив
     let cloneInput = inputBlock.cloneNode('true');                                                                          // создаю клон инпута через cloneNode
     allInputsBlock.append(cloneInput);
     cloneInput.querySelector('.clearButton').addEventListener('click', (event) => {
         event.target.parentElement.parentElement.remove();                                                                           // при клике по крестику, нахожу первый по тегу clearButton у родителя cloneInput(клон блока инпут + крестик) и удаляю весь весь блок (инпут + крестик)  
     })
 
-    cloneInput.querySelector('input').value = '';   
+    cloneInput.querySelector('input').value = '';
 
 
 }
@@ -40,7 +39,7 @@ clearButton.addEventListener('click', deleteInput);                             
 sortingIcon.addEventListener('click', () => {                                     // При клике по кнопке сотировки со стрелкой мы меняем у img значение src  и меняем таким образом картинки сотрировки ( с серой на черную) 
     sortingIcon.classList.toggle('sortDownIcon');
     sortingIcon.classList.toggle('sortUpIcon');
-    
+
 })
 
 sortInput = () => {
@@ -52,27 +51,27 @@ sortInput = () => {
         sortOrder = 1;
         order = 'down';
 
-    }  else if (order === 'down') {
+    } else if (order === 'down') {
         sortOrder = -1;
         order = 'up';
 
     }
 
 
-        inputArray.sort((a, b) => {
+    inputArray.sort((a, b) => {
 
-            let aValue = a.querySelector('.square__input').value; // через вот такую запись a.querySelector('.square__input').value  мы находим внутри блока наш инпут(благодаря квериселектору) и берём значение нашего инпута через value
-            let bValue = b.querySelector('.square__input').value;
+        let aValue = a.querySelector('.square__input').value; // через вот такую запись a.querySelector('.square__input').value  мы находим внутри блока наш инпут(благодаря квериселектору) и берём значение нашего инпута через value
+        let bValue = b.querySelector('.square__input').value;
 
-            if (aValue > bValue) {                                                               
-                return 1 * sortOrder;
-            } else if (aValue < bValue) {
-                return -1 * sortOrder;
-            } else {
-                return 0;
-            }
+        if (aValue > bValue) {
+            return 1 * sortOrder;
+        } else if (aValue < bValue) {
+            return -1 * sortOrder;
+        } else {
+            return 0;
+        }
 
-        })
+    })
 
 
     inputArray.forEach(item => {
@@ -87,3 +86,36 @@ sortInput = () => {
 sortingIcon.addEventListener('click', () => {
     sortInput();
 })
+
+allInputsBlock.addEventListener('dragstart', (event) => {   // При клике на кнопку drop срабатывает событие dragstart и навeшиваем класс selected на инпут,где был клик
+    event.target.classList.add('selected');
+    event.target.classList.add('dragChangeColor');
+
+})
+
+
+allInputsBlock.addEventListener('dragend', (event) => {
+    event.target.classList.remove('selected');
+    event.target.classList.remove('dragChangeColor');
+})
+
+allInputsBlock.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    const ItemUnderDropItem = event.target;
+    const dragAndDropItem = document.querySelector('.selected');
+
+    // const nextItemAfterDropItem = (ItemUnderDropItem !== dragAndDropItem.nextElementSibling) ? ItemUnderDropItem.nextElementSibling : ItemUnderDropItem;
+    const nextItemAfterDropItem = ItemUnderDropItem;
+
+ 
+    const isMoveAble = (dragAndDropItem.querySelector('.square__input') !== ItemUnderDropItem && ItemUnderDropItem.classList.contains('square__input'));
+
+    if (!isMoveAble) {
+        return;
+    }
+ 
+
+    allInputsBlock.insertBefore(dragAndDropItem, nextItemAfterDropItem.parentElement);
+
+})
+
