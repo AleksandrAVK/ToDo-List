@@ -21,14 +21,15 @@
 .square__sortIcon-block {
     display: flex;
     justify-content: flex-end;
-    width: 59%;
+    width: 79%;
+    outline: none;
 
     
 }
 
 .square_yellow-cap {
     display: flex;
-    background-color: yellow;
+    background-color: #FFDC40;
     width: 100%;
     height: 28px;
     border-radius: 12px 12px 0px 0px;
@@ -54,12 +55,15 @@
     border: none;
     outline:none;
     border-radius: 12px;
+    width: 100%;
+    padding-left: 15px;
 }
 
 .square__All-inputes-block {
     border-radius: 12px;
     border: 1px solid black;
     margin-bottom: 18px;
+    width: 299px;
     
 }
 
@@ -129,6 +133,7 @@ background: url(./image/clearButtonPurpur.svg) no-repeat;
     height: 19px;
     margin-bottom: 11px;
     border:none;
+    outline: none;
 }
 
 .sortDownIcon {
