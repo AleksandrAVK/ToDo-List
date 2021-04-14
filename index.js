@@ -29,7 +29,7 @@ function deleteInput(event) {
     event.target.parentElement.parentElement.remove();               // при клике по крестику удаляю весь весь блок (инпут + крестик)  
 }
 
-button.addEventListener('click', (event) => {                                        // при клике по кнопке button вызываю addInput()
+button.addEventListener('click', () => {                                        // при клике по кнопке button вызываю addInput()
     addInput();
 });
 
@@ -37,7 +37,7 @@ clearButton.addEventListener('click', deleteInput);                             
 
 
 
-sortingIcon.addEventListener('click', (event) => {                                     // При клике по кнопке сотировки со стрелкой мы меняем у img значение src  и меняем таким образом картинки сотрировки ( с серой на черную) 
+sortingIcon.addEventListener('click', () => {                                     // При клике по кнопке сотировки со стрелкой мы меняем у img значение src  и меняем таким образом картинки сотрировки ( с серой на черную) 
     sortingIcon.classList.toggle('sortDownIcon');
     sortingIcon.classList.toggle('sortUpIcon');
     
@@ -84,6 +84,6 @@ sortInput = () => {
 }
 
 
-sortingIcon.addEventListener('click', (event) => {
+sortingIcon.addEventListener('click', () => {
     sortInput();
 })
