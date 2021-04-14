@@ -56,13 +56,17 @@
     border-radius: 12px;
 }
 
-
+.square__All-inputes-block {
+    border-radius: 12px;
+    border: 1px solid black;
+    margin-bottom: 18px;
+    
+}
 
 .square__input-block {
     display: flex;
     border: 1px solid black;
     border-radius: 12px;
-    margin-bottom: 18px;
     height: 100%;
     border: none;
 }
@@ -85,7 +89,7 @@ background: url(./image/clearButtonPurpur.svg) no-repeat;
 
 .square__button-block {
     display: flex;
-    margin-bottom: 19px;
+    margin-bottom: 9px;
     width: 45%;
     background-color: rgb(132, 68, 200);
     border-radius: 29px 29px 29px 29px;
@@ -143,3 +147,4 @@ background: url(./image/clearButtonPurpur.svg) no-repeat;
     background: url(./image/sortUpIconBlack.svg)no-repeat;
     border:none;
 }
+
