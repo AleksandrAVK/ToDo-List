@@ -119,3 +119,45 @@ allInputsBlock.addEventListener('dragover', (event) => {
 
 })
 
+
+// статья про drag and drop https://htmlacademy.ru/blog/boost/tutorial/drag-and-drop
+
+// let userInput = prompt('Enter date', 20211225);
+// let button = document.querySelector('.userReturnInfo');
+// let responseText = document.querySelector('.responseText');
+// let gender = document.querySelector('.gender');
+// let name = document.querySelector('.name');
+// let location = document.querySelector('.location');
+// let email = document.querySelector('.email');
+// let login = document.querySelector('.login');
+// let age = document.querySelector('.age');
+// let picture = document.querySelector('.picture');
+
+
+// button.addEventListener('click', ()=> {
+// fetch('https://randomuser.me/api/')
+// .then((res)=>res.json())
+// .then((data) => {
+//     console.log(data)
+//     if(data === 0){
+//         return responseText.textContent = `${userInput} это рабочий день`
+//     }
+//     else if(data === 1) {
+//         return responseText.textContent = `${userInput} это нерабочий день`;
+//         // return console.log(`${userInput} это нерабочий день`)
+//     }
+//     else if(data === 100) {
+//         return responseText.textContent = 'Ошибка в дате'
+//     }
+//     else if(data === 101) {
+//         return responseText.textContent = `Данные не найдены`
+//     }
+//     else if(data === 199) {
+//         return responseText.textContent = `Ошибка сервиса`
+//     }
+// })
+// .catch(err => {
+//     responseText.textContent = `Произошла ошибка: ${err.message}`
+// })
+// })
+
